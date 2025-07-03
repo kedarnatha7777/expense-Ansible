@@ -22,7 +22,7 @@
         msg: "hello"
       
 
-    - nema: Install  Python 3.9 specifically, using the 'pip3.9' executable
+    - name : Install  Python 3.9 specifically, using the 'pip3.9' executable
       ansible.builtin.pip:
        name: 
           - PyMySQL 
