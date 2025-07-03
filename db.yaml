@@ -17,13 +17,12 @@
         state: started
         enabled: yes 
 
-    - name: install the python mysql dependecies 
+    - name: install mysql python dependencies 
       ansible.builtin.pip:
         name: 
           - PyMySQL
           - cryptography
       executable: pip3.9
-      
 
     - name: check the myqsl root password setuped or not 
       community.mysql.mysql_info:
