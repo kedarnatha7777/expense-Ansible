@@ -4,7 +4,7 @@
   vars: 
     mysql_root_passwd: ExpenseApp@1 
     login_host: db.78skedar.online
-  gather_facts: no 
+  gather_facts: yes 
   tasks:
     - name: install the mysql server 
       ansible.builtin.dnf:
