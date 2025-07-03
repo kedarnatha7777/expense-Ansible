@@ -17,10 +17,10 @@
         state: started
         enabled: yes 
 
-    - name: install mysql python dependencies 
+    - name: Install  Python 3.9 specifically, using the 'pip3.9' executable
       ansible.builtin.pip:
         name: 
-          - PyMySQL
+          - PyMySQL 
           - cryptography
       executable: pip3.9
 
