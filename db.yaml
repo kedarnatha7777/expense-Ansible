@@ -19,9 +19,7 @@
 
     - name: install the python mysql  dependecies 
       ansible.builtin.pip:
-       name: 
-       state:
-      loop: 
+        name: 
         - PyMySQL
         - cryptography
       executable: pip3.9
