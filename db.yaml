@@ -1,6 +1,9 @@
 - name : configure the db module 
   hosts: db 
   become: true 
+  vars: 
+    mysql_root_passwd: ExpenseApp@1 
+    login_host: db.78skedar.online
   gather_facts: no 
   tasks:
     - name: install the mysql server 
@@ -13,4 +16,18 @@
         name: mysqld 
         state: started
         enabled: yes 
+
+    - name: check the myqsl root password setuped or not 
+      community.mysql.mysql_info:
+        login_user: root
+        login_password: "{{ mysql_root_passwd }}"
+        login_host: "{{ localhost }}"
+        filter: version
+      ignore_errors: yes 
+      register: mysql
+
+    - name: print the mysql info 
+      ansible.builtin.debug:
+        msg: "mysql info is {{ mysql }}"
+        
     
