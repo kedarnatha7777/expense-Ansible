@@ -4,6 +4,10 @@
   vars: 
     mysql_root_passwd: ExpenseApp@1 
     login_host: db.78skedar.online
+  vars_prompt:
+    name: Mysql_root_password
+    prompt: PLease enter the mysql root password 
+    private: flase 
   gather_facts: yes 
   tasks:
     - name: install the mysql server 
@@ -37,4 +41,7 @@
       ansible.builtin.debug:
         msg: "mysql info is {{ mysql }}"
         
+    - name: please setup the password 
+      ansible.builtin.command: mysql_secure_installation --set-root-pass ExpenseApp@1
+      when: mysql.failed is true 
     
