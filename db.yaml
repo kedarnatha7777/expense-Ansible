@@ -16,7 +16,9 @@
         name: mysqld 
         state: started
         enabled: yes 
-
+    - name: hello 
+      ansible.builtin.debug:
+        msg: "hello "
     - name: Install  Python 3.9 specifically, using the 'pip3.9' executable
       ansible.builtin.pip:
         name: 
