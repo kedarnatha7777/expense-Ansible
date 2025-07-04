@@ -4,10 +4,10 @@
   gather_facts: true 
   tasks:  
     - name: disabling the nodejs18 
-      ansible.builtin.command: dnf module disable nodejs
+      ansible.builtin.command: dnf module disable nodejs -y
 
     - name: enable the nodejs 20
-      ansible.builtin.command: dnf module enable nodejs:20
+      ansible.builtin.command: dnf module enable nodejs:20 -y
 
     - name: install the nodejs
       ansible.builtin.dnf:
@@ -18,4 +18,3 @@
       ansible.builtin.user:
         name: expense
         state: present
-        
