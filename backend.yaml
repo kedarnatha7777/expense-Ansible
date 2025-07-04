@@ -1,6 +1,10 @@
 - name : configureing the backend module 
   hosts: backend
   become: yes 
+  vars:
+    login_host: db.78skedar.online
+    mysql_password: ExpenseApp@1 
+
   gather_facts: true 
   tasks:  
     - name: disabling the nodejs18 
@@ -55,6 +59,14 @@
           - cryptography
         executable: pip3.9
 
+    - name: load the schema data 
+      community.mysql.mysql_info:
+        login_user: root 
+        login_password: "{{ mysql_password }}"
+        login_host: "{{ login_host }}"
+        target: /app/schema/backend.sql
+        state: import 
+        name: all
 
 
  
