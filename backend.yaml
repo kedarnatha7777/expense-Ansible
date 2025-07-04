@@ -1,0 +1,21 @@
+- name : configureing the backend module 
+  hosts: backend
+  become: yes 
+  gather_facts: true 
+  tasks:  
+    - name: disabling the nodejs18 
+      ansible.builtin.command: dnf module disable nodejs
+
+    - name: enable the nodejs 20
+      ansible.builtin.command: dnf module enable nodejs:20
+
+    - name: install the nodejs
+      ansible.builtin.dnf:
+        name: nodejs
+        state: present 
+
+    - name: add user expense 
+      ansible.builtin.user:
+        name: expense
+        state: present
+        

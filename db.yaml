@@ -9,6 +9,7 @@
     prompt: PLease enter the mysql root password 
     private: flase 
   gather_facts: yes 
+  
   tasks:
     - name: install the mysql server 
       ansible.builtin.dnf:
