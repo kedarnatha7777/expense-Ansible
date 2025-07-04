@@ -7,7 +7,7 @@
   vars_prompt:
     name: Mysql_root_password
     prompt: PLease enter the mysql root password 
-    private: flase 
+    private: false 
   gather_facts: yes 
   
   tasks:
