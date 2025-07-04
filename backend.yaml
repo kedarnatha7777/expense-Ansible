@@ -11,8 +11,11 @@
 
     - name: install the nodejs
       ansible.builtin.dnf:
-        name: nodejs
+        name: "{{ item }}"
         state: present 
+      loop:
+        - nodejs 
+        - mysql
 
     - name: add user expense 
       ansible.builtin.user:
@@ -43,6 +46,15 @@
     - name: copy the backend service 
       ansible.builtin.copy:
         src: backend.service
-        dest: /etc/systemd/system/backend.service
+        dest: /etc/systemd/system/backend.service.
+
+    - name: install the python-mysql connecting dependencies
+      ansible.builtin.pip:
+        name: 
+          - PyMySQL
+          - cryptography
+        executable: 3.9
+
+
 
  
