@@ -31,6 +31,6 @@
 
     - name: copy the expense conf file to the /etc/nginx/defaul.d/ expense.conf  
       ansible.builtin.copy:
-        src: expense.conf
+        src: /home/ec2-user/expense-Ansible/expense.conf
         dest: /etc/nginx/defaul.d/
         remote_src: yes
