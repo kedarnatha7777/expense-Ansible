@@ -1,0 +1,11 @@
+chekc the service is running opr not 
+    sudo systemctl status 
+check the perticular port is opened or not
+    netstat -lntp 
+check the pid of the services 
+    ps -ef 
+===============
+check one is able to connect with the another server 
+telnet <url> port 
+telnet db.78skedar.online 3306 -> from backend to db 
+telnet backend.78skedar.online 3306 -> from frontend to backend
