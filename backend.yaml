@@ -68,5 +68,16 @@
         state: import 
         name: all
 
+    - name: backend daemon reload 
+      ansible.builtin.systemd:
+        daemon_reload: yes  
+
+
+    - name: start and enable the backend 
+      ansible.builtin.service:
+        name: backend
+        state: restarted
+        enabled: yes 
+
 
  
