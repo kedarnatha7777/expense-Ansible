@@ -29,8 +29,8 @@
         dest: /usr/share/nginx/html
         remote_src: yes 
 
-    - name: copy the expense conf file to the /etc/nginx/defaul.d/expense.conf 
-      ansible.builtin.copy: 
+    - name: copy the expense conf file to the /etc/nginx/defaul.d/ expense.conf  
+      ansible.builtin.copy:
         src: expense.conf
-        dest: /etc/nginx/default.d/expense.conf 
-        remote_src: yes 
+        dest: /etc/nginx/defaul.d/
+        remote_src: yes
