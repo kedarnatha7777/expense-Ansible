@@ -50,7 +50,7 @@
     - name: copy the backend service 
       ansible.builtin.copy:
         src: backend.service
-        dest: /etc/systemd/system/backend.service.
+        dest: /etc/systemd/system/backend.service
 
     - name: install the python-mysql connecting dependencies
       ansible.builtin.pip:
