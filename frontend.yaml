@@ -21,8 +21,8 @@
     - name: crete html dir
       ansible.builtin.file: 
         path: /usr/share/nginx/html
-        state: present 
-        
+        state: directory 
+
     - name: downlode the code and unzip the /usr/share/nginx/html in htis path 
       ansible.builtin.unarchive:
         src: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
